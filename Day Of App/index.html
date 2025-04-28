@@ -1,0 +1,46 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calendar</title>
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/general.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+  </head>
+  <body>
+    <header class="main-header">
+      <nav class="nav">
+        <img src="img/holcim-logo-min.png" alt="" class="nav-logo" />
+        <div class="details">
+          <ul class="ul-list">
+            <li class="li-list">
+              <a href="#" class="a-link">Details</a>
+              <a href="#" class="a-link">Your Request</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <section class="details-form">
+      <div class="form container">
+        <h1 class="description">Paid Leaves Form</h1>
+        <form class="form-calendar">
+          <div class="input input-1">
+            <label for="text" class="label-calendar">FROM:</label>
+            <input type="date" id="FROM" name="FROM" class="input-calendar" />
+          </div>
+          <div class="input input-2">
+            <label for="text" class="label-calendar">TO:</label>
+            <input type="date" id="TO" name="TO" class="input-calendar" />
+          </div>
+          <label for="text" class="result"></label>
+          <button type="submit" class="btn-calendar">SUBMIT</button>
+        </form>
+      </div>
+    </section>
+    <script src="scripitIndex.js"></script>
+  </body>
+</html>
