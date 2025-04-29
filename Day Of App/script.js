@@ -11,6 +11,7 @@ const formContainerEl = document.querySelector(".form-container");
 const labelRequired = document.querySelectorAll(".required");
 const inputForm = document.querySelectorAll(".input-form");
 const btnEl = document.querySelector(".btn-submit");
+const validationMessagesel = document.querySelector(".error-status ");
 
 const [input1, input2] = inputForm;
 
@@ -29,24 +30,30 @@ class Application {
     // Hide required labels if both fields are empty
     if (input1.value === "" || input2.value === "") {
       this._AddDisplayProperry("inline-block");
+      this._AddValidationMessages("Fields should not be empty");
     } else {
       // Check if email already exists
       const isItIn = this.#objectArrays.find(
         (obj) => obj.email === input1.value
       );
-      if (isItIn) return alert("This email is already registered!");
+      if (isItIn)
+        return this._AddValidationMessagesl(
+          "This email is already registered!"
+        );
 
       // Validate email format using regex
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(input1.value)) {
-        return alert("Please enter a valid email address.");
+        return this.AddValidationMessages(
+          "Please enter a valid email address."
+        );
       }
 
       // Password Validation
       const passwordRegex =
         /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*]).{6,}$/;
       if (!passwordRegex.test(input2.value)) {
-        return alert(
+        return this._AddValidationMessages(
           "Password must be at least 6 characters long, contain one uppercase letter, one lowercase letter, one number, and one special character."
         );
       }
@@ -57,7 +64,8 @@ class Application {
       this._addLocalStorage();
       this._clearFields(input1, input2);
       this._AddDisplayProperry("none");
-      alert("You have successfully registered!");
+      validationMessagesel.style.color = "green";
+      this._AddValidationMessages("You have successfully registered!");
     }
   }
 
@@ -79,6 +87,11 @@ class Application {
 
   _AddDisplayProperry(display) {
     labelRequired.forEach((label) => (label.style.display = display));
+  }
+
+  _AddValidationMessages(messages) {
+    validationMessagesel.style.opacity = "1";
+    validationMessagesel.innerHTML = messages;
   }
 }
 
