@@ -69,3 +69,9 @@ body {
   color: #fff;
   font-size: 2rem;
 }
+.error-status {
+  opacity: 0;
+  font-size: 1.4rem;
+  color: red;
+  font-weight: 500;
+}
