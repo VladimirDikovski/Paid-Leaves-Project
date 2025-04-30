@@ -1,0 +1,40 @@
+body {
+  background: #2a7b9b;
+  background: linear-gradient(
+    90deg,
+    rgba(42, 123, 155, 1) 0%,
+    rgba(87, 199, 133, 1) 50%,
+    rgba(237, 221, 83, 1) 100%
+  );
+}
+
+.sides {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30rem;
+  gap: 10rem;
+}
+
+.main-header {
+  font-size: 4rem;
+  max-width: 40rem;
+  color: #1a1a1a;
+}
+
+.side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.a-link {
+  color: white;
+  background-color: #0f2e3d;
+  padding: 2rem 4rem;
+  border-radius: 2rem;
+  text-decoration: none;
+  font-size: 2rem;
+}

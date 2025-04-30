@@ -1,0 +1,114 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calendar</title>
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/general.css" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+  </head>
+  <body>
+    <header class="main-header">
+      <nav class="nav">
+        <img src="img/holcim-logo-min.png" alt="" class="nav-logo" />
+        <div class="details">
+          <ul class="ul-list">
+            <li class="li-list">
+              <input
+                type="email"
+                class="input-nav input-email"
+                placeholder="...@holcim.com"
+              />
+              <input
+                type="password"
+                class="input-nav input-password"
+                placeholder="Password"
+              />
+              <button type="submit" class="sumbit-nav">Submit</button>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <section class="details-form hidden">
+      <div class="box-details">
+        <h1 class="user-details">Vladimir</h1>
+        <h1 class="user-paidLeaves-details">
+          Your paid leaves are <span class="paidleave">23</span>
+        </h1>
+      </div>
+
+      <div class="form container">
+        <h1 class="description">Paid Leaves Form</h1>
+        <form class="form-calendar">
+          <div class="input input-1">
+            <label for="text" class="label-calendar">FROM:</label>
+            <input type="date" id="FROM" name="FROM" class="input-calendar" />
+          </div>
+          <div class="input input-2">
+            <label for="text" class="label-calendar">TO:</label>
+            <input
+              type="date"
+              id="TO"
+              name="TO"
+              class="input-calendar input-calendar-2"
+            />
+          </div>
+          <label for="text" class="result"></label>
+          <button type="submit" class="btn-calendar-submit calculate">
+            CALCULATE
+          </button>
+          <button type="submit" class="btn-calendar">SUBMIT</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="days-request container hidden">
+      <div class="table-wrapper">
+        <table class="details-request-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Date In</th>
+              <th>Date Out</th>
+              <th>Total Days</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+        </table>
+        <div class="table-scroll">
+          <table class="details-request-table">
+            <tbody class="t-body">
+              <!-- <tr>
+                <td>1</td>
+                <td>25.04.2025</td>
+                <td>26.04.2025</td>
+                <td>5 days</td>
+                <td>
+                  <ion-icon
+                    name="construct-sharp"
+                    class="icon-change"
+                  ></ion-icon>
+                  <ion-icon name="close-sharp" class="icon-delete"></ion-icon>
+                </td>
+              </tr> -->
+              <!-- Repeat rows as needed -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    <script src="scripitIndex.js"></script>
+  </body>
+</html>
